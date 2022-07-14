@@ -61,7 +61,7 @@ const Login = () => {
         <Box className='loginContainer'>
             <TextField className="loginTextfield" id="outlined-basic" label="email" variant="outlined" size="medium" error={emailErr} helperText={emailHelper} onChange={takeEmail} />
             <TextField className="loginTextfield" id="outlined-password-input" label="Password" type="password" autoComplete="current-password" error={passwordErr} helperText={passwordHelper} onChange={takePassword} />
-            <Button className="loginButton" variant="contained" sx={{ backgroundColor: 'gray', color: 'white' }} onClick={handleOnSubmit}>LOGIN</Button>
+            <Button className="loginButton" variant="contained" size="large" sx={{ backgroundColor: 'gray', color: 'white' }} onClick={handleOnSubmit}>LOGIN</Button>
         </Box>
 
     )
