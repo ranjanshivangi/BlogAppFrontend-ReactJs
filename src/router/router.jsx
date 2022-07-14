@@ -1,12 +1,13 @@
 import React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
+import SignUp from "../components/signup/signup";
 
 function BlogRouter() {
     return (
         <>
-            <BrowserRouter >
+            <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<p>Welcome to Blogg App</p>}/>
+                    <Route path="/" element={<SignUp/>}/>
                 </Routes>                 
                
             </BrowserRouter>
