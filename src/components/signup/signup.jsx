@@ -52,7 +52,7 @@ const SignUp = () => {
 
     return (
         <Box className='signupContainer'>
-            <TextField className="signupTextfield" id="outlined-basic" label="Username" variant="outlined" size="medium" />
+            <TextField className="signupTextfield" id="outlined-basic" label="Username" variant="outlined" size="medium" onChange={takeName} />
             <TextField className="signupTextfield" id="outlined-basic" label="email" variant="outlined" size="medium" error={emailErr} helperText={emailHelper} onChange={takeEmail} />
             <TextField className="signupTextfield" id="outlined-password-input" label="Password" type="password" autoComplete="current-password" error={passwordErr} helperText={passwordHelper} onChange={takePassword} />
             <Button className="signupButton" variant="contained" sx={{ backgroundColor: 'gray', color: 'white' }} onClick={handleOnSubmit}>SIGNUP</Button>
