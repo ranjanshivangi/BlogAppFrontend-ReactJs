@@ -1,6 +1,7 @@
 
 import { Box, Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import { userSignup } from '../../services/userservice';
 import React from 'react';
 import './signup.css';
 
@@ -47,6 +48,15 @@ const SignUp = () => {
         else {
             setpasswordErr(true);
             setpasswordHelper("Enter correct password")
+        }
+
+        if(emailTestRegex==true && passwordTestRegex==true){
+            userSignup(signupObj).then((res)=>{
+                console.log(res);
+            })
+            .catch((error)=>{
+                console.log(error);
+            })
         }
     }
 
