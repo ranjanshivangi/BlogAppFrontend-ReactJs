@@ -7,11 +7,14 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
+import Header from "../../components/header/header";
 
 const Home = () => {
-    const [view, setView] = React.useState(true)
+    const [view, setView] = React.useState(true);
+   
     return (
         <Box className="homeContainer">
+            <Header/>
             <Card className="cardContainer">
                 <CardActions className="cardHeader">
                     <Button onClick={() => setView(false)} style={{ color: 'black', fontWeight: 'bold', fontSize: '23px' }}>LOGIN</Button>
