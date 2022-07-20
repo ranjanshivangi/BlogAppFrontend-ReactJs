@@ -1,0 +1,36 @@
+.homeContainer{
+    background-color: grey;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.2em;
+    padding-bottom: 0.2rem;
+}
+.cardContainer{
+    height: 60%;
+    width: 27%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+}
+.cardHeader{
+    /* border: 1px solid black; */
+    width: 80%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.cardContent{
+    /* border: 2px solid black; */
+    width: 80%;
+    height: 70%;
+    display: flex;
+    justify-content:center; 
+    align-items: center;
+}
