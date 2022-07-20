@@ -1,0 +1,15 @@
+.profileContainer{
+    border: 1px solid white;
+    height: 80%;
+    width: 60%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    padding: 20px;
+    gap:2rem;
+}
+.logoutButton{
+    width: 20%;
+}

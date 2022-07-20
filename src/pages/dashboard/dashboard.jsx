@@ -7,6 +7,7 @@ import Header from "../../components/header/header";
 import { Button } from "@mui/material";
 import { Tab, Tabs } from "@mui/material";
 import { TabPanel } from "@material-ui/lab";
+import Profile from "../../components/profile/profile";
 
 const Dashboard = () => {
     const [value, setValue] = React.useState('2');
@@ -33,7 +34,7 @@ const Dashboard = () => {
             <Box className="contentBox">
                 <Box className="boxOne">
                     {
-                        value == '4' ? <Form /> : value == '3' ? <Box>my</Box> : value == '2' ? <Blog /> : <Box>prof</Box>
+                        value == '4' ? <Form /> : value == '3' ? <Box>my</Box> : value == '2' ? <Blog /> : <Profile/>
 
                     }</Box>
                 <Box className="boxtwo">

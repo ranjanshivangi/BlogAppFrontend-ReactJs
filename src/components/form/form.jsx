@@ -22,7 +22,7 @@ const Form = () => {
             {/* <TextField id="standard-basic" label="ImageUrl" variant="standard" className="formInputs" /> */}
             <Box className="formInputs">Image Upload
             <input type="file"value={file} onChange={handleChange} />
-            <img src={file}/></Box>
+            <img src={file} alt=""/></Box>
             <Button>UPLOAD</Button>
             <Box  className="formInputs"><RichTextEditor config={config}/></Box>            
             <Button className="submitButton" variant="contained" size="large" sx={{ backgroundColor: 'brown', color: 'white' }}>SUBMIT</Button>
