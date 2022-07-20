@@ -1,7 +1,7 @@
 .formContainer{
     background-color: white;
     height: 95%;
-    width: 85%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

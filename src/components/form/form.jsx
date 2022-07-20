@@ -2,7 +2,7 @@ import React from "react";
 import './form.css';
 import { Box, Paper } from "@mui/material";
 import TextField from '@mui/material/TextField';
-import {Button} from "@mui/material";
+import { Button } from "@mui/material";
 import RichTextEditor from "../richtexteditor/richtexteditor";
 
 const Form = () => {
@@ -13,18 +13,17 @@ const Form = () => {
     }
     const config = {
         buttons: ["bold", "italic", "link", "unlink", "underline", "source"],
-      };
+    };
 
     return (
         <Paper elevation={10} className="formContainer">
             <TextField id="standard-basic" label="Title" variant="standard" size="large" className="formInputs" />
             <TextField id="standard-basic" label="Category" variant="standard" className="formInputs" />
-            {/* <TextField id="standard-basic" label="ImageUrl" variant="standard" className="formInputs" /> */}
             <Box className="formInputs">Image Upload
-            <input type="file"value={file} onChange={handleChange} />
-            <img src={file} alt=""/></Box>
+                <input type="file" value={file} onChange={handleChange} />
+                <img src={file} alt="" /></Box>
             <Button>UPLOAD</Button>
-            <Box  className="formInputs"><RichTextEditor config={config}/></Box>            
+            <Box className="formInputs"><RichTextEditor config={config} /></Box>
             <Button className="submitButton" variant="contained" size="large" sx={{ backgroundColor: 'brown', color: 'white' }}>SUBMIT</Button>
 
         </Paper>

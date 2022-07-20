@@ -16,40 +16,33 @@
   justify-content: space-between;
   align-items: center;
 }
-.buttonsContainer {   
-    width:70%;
-    height: 100%; 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    left: 2rem;
+.dashAvator {
+  height: 50px;
+  width: 50px;
 }
-.catButton{
-    position: relative;
-    right: 2rem;
+.catButton {
+  position: relative;
+  right: 2rem;
 }
 
-.contentBox{
-    border: 2px solid black;
-    width: 100%;
-    height: 80vh;
-    display: flex;
-    justify-content: space-between;
-    
+.contentBox {
+  /* border: 2px solid black; */
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
 }
-.boxOne{
-      /* border: 2px solid black; */
-      width: 85%;
-      height: 98%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-     
+.boxOne {
+  /* border: 2px solid black; */
+  width: 85%;
+  height: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-.boxtwo{
-    /* border: 2px solid white; */
-    width: 15%;
-    height: 98%;
-    background-color: white;
+.boxtwo {
+  /* border: 2px solid white; */
+  width: 15%;
+  height: 98%;
+  background-color: white;
 }
