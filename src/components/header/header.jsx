@@ -6,7 +6,7 @@ import BlogImg from '../../assets/blog.png'
 const Header = () => {
     return (
         <Box className="headerBox">
-            <img src={BlogImg} alt="err" className="headerImg"/>
+            <img src={BlogImg} alt="err" className="headerImg" />
         </Box>
     )
 }

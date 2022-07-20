@@ -1,0 +1,18 @@
+.profileContainer {
+  border: 1px solid white;
+  height: 95%;
+  width: 60%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: flex-start;
+  padding: 20px;
+}
+.avatorBox {
+  width: 100px;
+  height: 100px;
+}
+.logoutButton {
+  width: 20%;
+}

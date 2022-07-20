@@ -1,11 +1,11 @@
 import axios from "axios";
+import { URL } from "../constants/url";
 
 export const userSignup = async (obj) =>{
-    console.log(obj)
-    let responseOne = await axios.post("http://localhost:3000/api/v1/users/register", obj);
+    let responseOne = await axios.post(`${URL}register`, obj);
     return responseOne
 }
 export const userLogin = async (obj) => {
-    let responseTwo = await axios.post("http://localhost:3000/api/v1/users/login", obj);
+    let responseTwo = await axios.post(`${URL}login`, obj);
     return responseTwo;
 }

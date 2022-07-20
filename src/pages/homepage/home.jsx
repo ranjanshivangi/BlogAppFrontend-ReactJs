@@ -17,8 +17,8 @@ const Home = () => {
             <Header/>
             <Card className="cardContainer">
                 <CardActions className="cardHeader">
-                    <Button onClick={() => setView(false)} style={{ color: 'black', fontWeight: 'bold', fontSize: '23px' }}>LOGIN</Button>
-                    <Button onClick={() => setView(true)} style={{ color: 'black', fontWeight: 'bold', fontSize: '23px' }}>SIGNUP</Button>
+                    <Button onClick={() => setView(false)} style={{ color: 'brown', fontWeight: 'bold', fontSize: '23px' }}>LOGIN</Button>
+                    <Button onClick={() => setView(true)} style={{ color: 'brown', fontWeight: 'bold', fontSize: '23px' }}>SIGNUP</Button>
                 </CardActions>
                 <CardContent className="cardContent">
                     {
