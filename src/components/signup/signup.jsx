@@ -1,4 +1,4 @@
-
+import {EMAIL_REGEX, PASSWORD_REGEX, USERNAME_REGEX} from '../../constants/regex'
 import { Box, Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { userSignup } from '../../services/userservice';
@@ -6,8 +6,9 @@ import React from 'react';
 import './signup.css';
 
 const SignUp = () => {
-    const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
+
+    const [nameErr, setnameErr] = React.useState(false);
+    const [nameHelper, setnameHelper] = React.useState('');
 
     const [emailErr, setemailErr] = React.useState(false);
     const [emailHelper, setemailHelper] = React.useState('');
@@ -27,11 +28,20 @@ const SignUp = () => {
         setsignupObj({ ...signupObj, password: event.target.value })
     }
 
-    const emailTestRegex = emailRegex.test(signupObj.email)
-    const passwordTestRegex = passwordRegex.test(signupObj.password)
+    const nameTestRegex = USERNAME_REGEX.test(signupObj.userName)
+    const emailTestRegex = EMAIL_REGEX.test(signupObj.email)
+    const passwordTestRegex = PASSWORD_REGEX.test(signupObj.password)
 
     const handleOnSubmit = () => {
-        if (emailTestRegex === true) {
+        if (nameTestRegex) {
+            setnameErr(false);
+            setnameHelper('')
+        }
+        else {
+            setnameErr(true);
+            setnameHelper("Enter correct email")
+        }
+        if (emailTestRegex) {
             setemailErr(false);
             setemailHelper('')
         }
@@ -40,7 +50,7 @@ const SignUp = () => {
             setemailHelper("Enter correct email")
         }
 
-        if (passwordTestRegex === true) {
+        if (passwordTestRegex) {
             setpasswordErr(false);
             setpasswordHelper('')
         }
@@ -50,7 +60,7 @@ const SignUp = () => {
             setpasswordHelper("Enter correct password")
         }
 
-        if(emailTestRegex==true && passwordTestRegex==true){
+        if(nameTestRegex && emailTestRegex && passwordTestRegex){
             userSignup(signupObj).then((res)=>{
                 console.log(res);
             })
@@ -62,10 +72,10 @@ const SignUp = () => {
 
     return (
         <Box className='signupContainer'>
-            <TextField className="signupTextfield" id="outlined-basic" label="Username" variant="outlined" size="medium" onChange={takeName} />
+            <TextField className="signupTextfield" id="outlined-basic" label="Username" variant="outlined" size="medium" error={nameErr} helperText={nameHelper} onChange={takeName} />
             <TextField className="signupTextfield" id="outlined-basic" label="email" variant="outlined" size="medium" error={emailErr} helperText={emailHelper} onChange={takeEmail} />
             <TextField className="signupTextfield" id="outlined-password-input" label="Password" type="password" autoComplete="current-password" error={passwordErr} helperText={passwordHelper} onChange={takePassword} />
-            <Button className="signupButton" variant="contained" size="large" sx={{ backgroundColor: 'gray', color: 'white' }} onClick={handleOnSubmit}>SIGNUP</Button>
+            <Button className="signupButton" variant="contained" size="large" sx={{ backgroundColor: 'brown', color: 'white' }} onClick={handleOnSubmit}>SIGNUP</Button>
         </Box>
 
     )

@@ -3,10 +3,11 @@ import './login.css';
 import { Box, Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { userLogin } from "../../services/userservice";
+import { EMAIL_REGEX, PASSWORD_REGEX } from '../../constants/regex';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-    const emailRegex = /^[a-zA-Z]+[a-zA-Z0-9]*[- . + _]?[a-zA-Z0-9]+[@]{1}[a-z0-9]+[.]{1}[a-z]+[.]?[a-z]+$/;
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&-+=()])([a-zA-Z0-9]*).{8,}$/;
+    let navigate = useNavigate();
 
     const [emailErr, setemailErr] = React.useState(false);
     const [emailHelper, setemailHelper] = React.useState('');
@@ -23,11 +24,11 @@ const Login = () => {
         setsignupObj({ ...loginObj, password: event.target.value })
     }
 
-    const emailTestRegex = emailRegex.test(loginObj.email)
-    const passwordTestRegex = passwordRegex.test(loginObj.password)
+    const emailTestRegex = EMAIL_REGEX.test(loginObj.email)
+    const passwordTestRegex = PASSWORD_REGEX.test(loginObj.password)
 
     const handleOnSubmit = () => {
-        if (emailTestRegex === true) {
+        if (emailTestRegex) {
             setemailErr(false);
             setemailHelper('')
         }
@@ -36,7 +37,7 @@ const Login = () => {
             setemailHelper("Enter correct email")
         }
 
-        if (passwordTestRegex === true) {
+        if (passwordTestRegex) {
             setpasswordErr(false);
             setpasswordHelper('')
         }
@@ -46,10 +47,10 @@ const Login = () => {
             setpasswordHelper("Enter correct password")
         }
 
-        if (emailTestRegex == true && passwordTestRegex == true) {
+        if (emailTestRegex && passwordTestRegex) {
             userLogin(loginObj).then((res) => {
-                console.log(res);
                 localStorage.setItem('token', res.data.data.token);
+                navigate("/dashboard")
             })
                 .catch((error) => {
                     console.log(error);
@@ -61,7 +62,7 @@ const Login = () => {
         <Box className='loginContainer'>
             <TextField className="loginTextfield" id="outlined-basic" label="email" variant="outlined" size="medium" error={emailErr} helperText={emailHelper} onChange={takeEmail} />
             <TextField className="loginTextfield" id="outlined-password-input" label="Password" type="password" autoComplete="current-password" error={passwordErr} helperText={passwordHelper} onChange={takePassword} />
-            <Button className="loginButton" variant="contained" size="large" sx={{ backgroundColor: 'gray', color: 'white' }} onClick={handleOnSubmit}>LOGIN</Button>
+            <Button className="loginButton" variant="contained" size="large" sx={{ backgroundColor: 'brown', color: 'white' }} onClick={handleOnSubmit}>LOGIN</Button>
         </Box>
 
     )
