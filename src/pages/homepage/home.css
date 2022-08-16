@@ -1,36 +1,95 @@
 .homeContainer{
-    background-color: #e0c6a1;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 0.2em;
-    padding-bottom: 0.2rem;
+  background-color: #e0c6a1;
+  /* border: 1px solid black; */
+  height: auto;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.2em;
+  padding-bottom: 0.2rem;
 }
-.cardContainer{
-    height: 60%;
-    width: 27%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
+.navBox {
+  /* border: 1px solid black; */
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heading {
+  /* border: 1px solid black; */
+  width: 15%;
+  height: 100%;
+}
+.headingImg {
+  width: 100%;
+  height: 100%;
+}
+.tabsBox {
+  /* border: 1px solid black; */
+  width: 70%;
+  height: 100%;
+}
 
+.homeBox {
+  /* border: 1px solid black; */
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
-.cardHeader{
-    /* border: 1px solid black; */
-    width: 80%;
-    height: 20%;
-    display: flex;
-    justify-content: space-between;
+.blogItem {
+  /* border: 1px solid blue; */
+  height: 70vh;
 }
-.cardContent{
-    /* border: 2px solid black; */
-    width: 80%;
-    height: 70%;
-    display: flex;
-    justify-content:center; 
-    align-items: center;
+.aboutBox {
+  width: 70%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.aboutImg {
+  /* border: 1px solid black; */
+  width: 30%;
+  height: 80%;
+}
+.aboutDetails {
+  /* border: 1px solid brown; */
+  width: 60%;
+  height: 80%;
+}
+.loginSignBox {
+  /* border: 1px solid black; */
+  background-color: transparent;
+  width: 30%;
+  height: 65vh;
+}
+.cardContainer {
+  height: 95%;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.cardHeader {
+  /* border: 1px solid black; */
+  width: 80%;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+.cardContent {
+  /* border: 2px solid black; */
+  width: 80%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -7,29 +7,26 @@ import { Button } from '@mui/material';
 import Box from '@mui/material/Box';
 import './blog.css';
 
-const Blog = () => {
+const Blog = (props) => {
     return (
-        <Box className='cardContainer' >
+        <Box className='blogCardContainer' >
             <Card sx={{ width: '100%', height: '100%' }}>
                 <Box className='imgContainer'>
-                    <img src="" alt="err" style={{ width: '100%', height: '100%' }} />
+                    <img src={props.singleBlog.image} alt="err" style={{ width: '90%', height: '90%', boxShadow: '5px 5px 5px grey'}} />
                 </Box>
                 <CardContent >
-                    <Typography gutterBottom component="div" style={{ font: 'normal normal bold 18px Roboto' }}>
-                        The Best Pizza
+                    <Typography gutterBottom component="div" style={{ font: 'normal normal bold 20px Roboto' }}>
+                        {props.singleBlog.title}
                     </Typography>
-                    <Typography color="text.secondary" style={{ font: 'normal normal 14px Roboto' }}>
-                        by shiviRanjan
+                    <Typography color="text.secondary" style={{ font: 'normal normal 18px Roboto' }}>
+                    <span className="categoryTag">{props.singleBlog.category}</span>
                     </Typography>
-                    <Typography color="text.secondary" style={{ font: 'normal normal 14px Roboto' }}>
-                        Food
-                    </Typography>
-                    <Typography gutterBottom component="div" style={{ font: 'normal normal bold 16px Roboto' }}>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus sapiente adipisci debitis cupiditate ab accusantium maiores nemo nam ducimus repudiandae, vitae necessitatibus temporibus sequi doloremque eius. Beatae qui culpa consequuntur.
+                    <Typography color="text.secondary" style={{ font: 'normal normal 18px Roboto' }}>
+                    @{props.singleBlog.userName}
                     </Typography>
                 </CardContent>
                 <CardActions>
-                    <Button size="small">Learn More</Button>
+                    <Button size="small">Know More</Button>
                 </CardActions>
 
             </Card>

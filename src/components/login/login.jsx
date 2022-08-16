@@ -48,8 +48,12 @@ const Login = () => {
         }
 
         if (emailTestRegex && passwordTestRegex) {
-            userLogin(loginObj).then((res) => {
-                localStorage.setItem('token', res.data.data.token);
+            userLogin(loginObj).then((res) => { 
+                console.log(res) 
+                const auth = res.headers.authorization
+                const token = auth.split(' ')[1]   
+                console.log(token);          
+                localStorage.setItem('token', token);
                 navigate("/dashboard")
             })
                 .catch((error) => {

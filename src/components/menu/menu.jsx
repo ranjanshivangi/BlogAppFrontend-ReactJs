@@ -11,7 +11,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
-export default function AccountMenu() {
+export default function AccountMenu( props ) {
+    
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -20,6 +21,9 @@ export default function AccountMenu() {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const onClickingProfile=()=>{
+        props.handleMyProfile();
+    }
     return (
         <React.Fragment>
             <Tooltip title="Account">
@@ -61,7 +65,7 @@ export default function AccountMenu() {
                             display: 'block',
                             position: 'absolute',
                             top: 0,
-                            left: 14,
+                            right: 14,
                             width: 10,
                             height: 10,
                             bgcolor: 'background.paper',
@@ -73,7 +77,7 @@ export default function AccountMenu() {
                 transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                 anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
             >
-                <MenuItem>
+                <MenuItem onClick={onClickingProfile}>
                     <Avatar />My Profile
                 </MenuItem>
                 <Divider />

@@ -17,6 +17,7 @@ const Profile = () => {
                     <ProfileAvator />
                 </Box>
                 <h1>Shivangi Ranjan</h1>
+                <h2>@shiviranjan</h2>
                 <Link
                     component="button"
                     variant="body2"

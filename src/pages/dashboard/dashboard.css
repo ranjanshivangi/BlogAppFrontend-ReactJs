@@ -1,14 +1,14 @@
 .dashboardContainer {
   background-color: #e0c6a1;
-  height: 100%;
+  height: auto;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.2em;
+  gap: 1rem;
 }
-
 .navBar {
   width: 100%;
   height: 8vh;
@@ -16,13 +16,76 @@
   justify-content: space-between;
   align-items: center;
 }
+.searchBox {
+  border: 2px solid whitesmoke;
+  height: 70%;
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;  
+  border-radius: 5px;
+}
+
+.searchButton {
+  width: 10%;
+  height: 90%;
+  cursor: pointer;
+  font-size: 20px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.searchField {
+  width: 85%;
+  border: none;
+  height: 70%;
+  border: none;
+  outline: none;
+  background-color: white;
+
+}
+.dashboardTabsBox{
+  /* border: 1px solid brown; */
+  width: 35%;
+ height: 100%;
+ display: flex;
+ justify-content: center;
+ /* gap: 2rem; */
+ 
+}
+.profileBox{
+  /* border: 1px solid black; */
+  width: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
 .dashAvator {
   height: 50px;
   width: 50px;
 }
-.catButton {
-  position: relative;
-  right: 2rem;
+.categoryBar{
+  width: 100%;
+  height: 6vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.categoryBox{
+  /* border: 2px solid black; */
+  background-color: brown;
+  color: white;
+  width: 12%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui;
+  font-size: 22px;
+  font-weight: bold;
+  
 }
 
 .contentBox {
