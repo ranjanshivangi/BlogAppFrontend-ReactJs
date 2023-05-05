@@ -77,7 +77,7 @@ const SignUp = () => {
 
         if(fullNameTestRegex && nameTestRegex && emailTestRegex && passwordTestRegex){
             userSignup(signupObj).then((res)=>{
-                console.log(res);
+                
             })
             .catch((error)=>{
                 console.log(error);

@@ -48,17 +48,20 @@ const Login = () => {
         }
 
         if (emailTestRegex && passwordTestRegex) {
-            userLogin(loginObj).then((res) => { 
-                console.log(res) 
-                const auth = res.headers.authorization
-                const token = auth.split(' ')[1]   
-                console.log(token);          
-                localStorage.setItem('token', token);
-                navigate("/dashboard")
-            })
-                .catch((error) => {
-                    console.log(error);
+            userLogin(loginObj)
+                .then((res) => {
+                    console.log(res)
+                    const auth = res.headers.authorization
+                    const token = auth.split(' ')[1]
+                    console.log(token);
+                    localStorage.setItem('token', token);
+                    navigate("/dashboard")
                 })
+                .catch((e) => {
+                    console.log(e.response);
+                    alert(e.response.data.message);
+                })
+               
         }
     }
 

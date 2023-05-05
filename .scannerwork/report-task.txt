@@ -1,0 +1,6 @@
+projectKey=blog-frontend
+serverUrl=http://localhost:9000
+serverVersion=9.5.0.56709
+dashboardUrl=http://localhost:9000/dashboard?id=blog-frontend
+ceTaskId=AYLFczLMxYBiz_t4WNUz
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYLFczLMxYBiz_t4WNUz

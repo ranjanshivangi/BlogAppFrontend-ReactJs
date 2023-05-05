@@ -12,18 +12,11 @@ import Grid from '@mui/material/Grid';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Dashboard = () => {
-    const [search, setSearch] = React.useState('')
+    const [search, setSearch] = React.useState('');
+    const [category, setCategory] = React.useState('');
     const [blogs, setBlogs] = React.useState([])
     const [myBlogs, setMyBlogs] = React.useState([])
     const [value, setValue] = React.useState(1);
-
-    React.useEffect(() => {
-        getBlogs()
-    }, [search], [blogs])
-
-    React.useEffect(() => {
-        getOnyMyBlogs()
-    }, [search], [blogs])
 
     const handleSearch = (event) => {
         setSearch(event.target.value)
@@ -34,13 +27,29 @@ const Dashboard = () => {
     const handleMyProfile = () => {
         setValue(4)
     };
+    const handleCategory = (value) => {
+        console.log(value)
+        setCategory(value)
+    };
+    
     const getBlogs = () => {
         getAllBlogs()
             .then((res) => {
                 console.log(res);
-                if (search) {
-                    let result = res.data.data.filter(blog => blog.title.toLowerCase().includes(search.toLowerCase()));
-                    setBlogs(result)
+                console.log(res.data.data)
+                console.log(category)
+                if (category != '') {
+                    console.log(res.data.data.category)
+                    let resultBlog = res.data.data.filter(blog => blog.category.toLowerCase().includes(category.toLowerCase()));
+                    console.log("line 40", resultBlog)
+                    setBlogs(resultBlog)
+                    // if (search) {
+                    //     let result = res.data.data.filter(blog => blog.title.toLowerCase().includes(search.toLowerCase()));
+                    //     console.log("line 43", result)
+                    //     setBlogs(result)
+                    // } else {
+                    //     setBlogs(res.data.data)
+                    // }
                 } else {
                     setBlogs(res.data.data)
                 }
@@ -63,14 +72,13 @@ const Dashboard = () => {
             })
     };
 
-    const handleCategory = (value) => {
-        if (value != 'All'){
-            const filterItem = blogs.filter((blog) => {
-                return blog.category === value
-            })
-        setBlogs(filterItem)
-        }    
-    };
+    React.useEffect(() => {
+        getBlogs()
+    }, [category, search])
+
+    React.useEffect(() => {
+        getOnyMyBlogs()
+    }, [search], [category])
 
     return (
         <Box className="dashboardContainer">
@@ -98,12 +106,11 @@ const Dashboard = () => {
             </Box>
             <Box sx={{ width: '100%', bgcolor: 'background.paper' }} className="categoryBar">
                 <Box className="categoryBox">CATEGORY</Box>
-                <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('All')}>All</Button>
                 <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('Food')}>Food</Button>
                 <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('Motivational')}>Motivational</Button>
                 <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('Fashion')}>Fashion</Button>
                 <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('Sports')}>Sports</Button>
-                <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('Technology')}>Technology</Button>
+                <Button variant="text" size="large" sx={{ color: 'brown' }} onClick={() => handleCategory('')}>Others</Button>
             </Box>
             {
                 value == 1 ? <Box className="homeBox">
